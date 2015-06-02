@@ -52,6 +52,8 @@
 ;; (require 'setup-ggtags)
 (require 'setup-cedet)
 (require 'setup-editing)
+(require 'setup-mew)
+(require 'setup-yatex)
 
 (windmove-default-keybindings)
 
@@ -60,7 +62,6 @@
 ;; (fa-config-default)
 ;; (define-key c-mode-map  [(tab)] 'company-complete)
 ;; (define-key c++-mode-map  [(tab)] 'company-complete)
-
 ;; company
 (require 'company)
 (add-hook 'after-init-hook 'global-company-mode)
