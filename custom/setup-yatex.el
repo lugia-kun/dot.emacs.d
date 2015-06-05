@@ -1,14 +1,16 @@
+
+(autoload 'yatex-mode "yatex" nil t)
 (setq auto-mode-alist
-      (append ("\\.tex$" . yatex-mode)
-              ("\\.ltx$" . yatex-mode)
-              ("\\.cls$" . yatex-mode)
-              ("\\.sty$" . yatex-mode)
-              ("\\.clo$" . yatex-mode)
-              ("\\.bbl$" . yatex-mode) auto-mode-alist))
+      (append '(("\\.tex$" . yatex-mode)
+                ("\\.ltx$" . yatex-mode)
+                ("\\.cls$" . yatex-mode)
+                ("\\.sty$" . yatex-mode)
+                ("\\.clo$" . yatex-mode)
+                ("\\.bbl$" . yatex-mode)) auto-mode-alist))
 
 (setq YaTeX-inhibit-prefix-letter t)
 (setq YaTeX-kanji-code nil)
-(setq YaTeX-(looking-at )tex-message-code 'utf-8)
+(setq YaTeX-tex-message-code 'utf-8)
 (setq YaTeX-use-LaTeX2e t)
 (setq YaTeX-use-AMS-LaTeX t)
 (setq YaTeX-dvi2-command-ext-alist

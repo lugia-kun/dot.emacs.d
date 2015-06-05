@@ -1,6 +1,6 @@
 (require 'package)
 (add-to-list 'package-archives
-	     '("melpa" . "http://melpa.milkbox.net/packages/") t)
+         '("melpa" . "http://melpa.org/packages/") t)
 (package-initialize)
 
 (setq gc-cons-threshold 100000000)
@@ -39,7 +39,7 @@
     (unless (package-installed-p package)
       (package-install package))))
 
-(install-packages)
+;; (install-packages)
 
 ;; this variables must be set before load helm-gtags
 ;; you can change to any prefix key of your choice
@@ -54,6 +54,10 @@
 (require 'setup-editing)
 (require 'setup-mew)
 (require 'setup-yatex)
+(require 'setup-irony)
+(require 'setup-robe)
+(require 'setup-markdown)
+(require 'setup-nyan)
 
 (windmove-default-keybindings)
 
@@ -105,6 +109,8 @@
 
 ;; set appearance of a tab that is represented by 4 spaces
 (setq-default tab-width 4)
+
+(setq-default c-basic-offset 2)
 
 ;; Compilation
 (global-set-key (kbd "<f5>") (lambda ()
@@ -159,3 +165,4 @@
 
 ;; Package zygospore
 (global-set-key (kbd "C-x 1") 'zygospore-toggle-delete-other-windows)
+
