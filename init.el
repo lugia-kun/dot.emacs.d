@@ -54,7 +54,7 @@
 (require 'setup-editing)
 (require 'setup-mew)
 (require 'setup-yatex)
-(require 'setup-irony)
+;; (require 'setup-irony)
 (require 'setup-robe)
 (require 'setup-markdown)
 (require 'setup-nyan)
@@ -110,7 +110,7 @@
 ;; set appearance of a tab that is represented by 4 spaces
 (setq-default tab-width 4)
 
-(setq-default c-basic-offset 2)
+(setq-default c-basic-offset 4)
 
 ;; Compilation
 (global-set-key (kbd "<f5>") (lambda ()
