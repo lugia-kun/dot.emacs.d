@@ -45,6 +45,9 @@
 ;; you can change to any prefix key of your choice
 (setq helm-gtags-prefix-key "\C-cg")
 
+(add-to-list 'load-path
+             "c:/CMake/share/cmake-3.5/editors/emacs")
+
 (add-to-list 'load-path "~/.emacs.d/custom")
 
 (require 'setup-helm)
@@ -70,10 +73,10 @@
 (require 'company)
 (add-hook 'after-init-hook 'global-company-mode)
 (delete 'company-semantic company-backends)
-(define-key c-mode-map  [(tab)] 'company-complete)
-(define-key c++-mode-map  [(tab)] 'company-complete)
-;; (define-key c-mode-map  [(control tab)] 'company-complete)
-;; (define-key c++-mode-map  [(control tab)] 'company-complete)
+;;(define-key c-mode-map  [(tab)] 'company-complete)
+;;(define-key c++-mode-map  [(tab)] 'company-complete)
+(define-key c-mode-map  [(control tab)] 'company-complete)
+(define-key c++-mode-map  [(control tab)] 'company-complete)
 
 ;; company-c-headers
 (add-to-list 'company-backends 'company-c-headers)
@@ -109,7 +112,6 @@
 
 ;; set appearance of a tab that is represented by 4 spaces
 (setq-default tab-width 4)
-
 (setq-default c-basic-offset 4)
 
 ;; Compilation
