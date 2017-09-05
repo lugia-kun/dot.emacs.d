@@ -38,5 +38,6 @@
 (depends-on "company")
 (depends-on "clean-aindent-mode")
 (depends-on "anzu")
+(depends-on "mew")
 
 (depends-on "yatex" :hg "http://www.yatex.org/hgrepos/yatex")
