@@ -1,4 +1,6 @@
 
+(el-get-bundle "markdown-mode")
+
 (autoload 'markdown-mode "markdown-mode" nil t)
 
 (setq auto-mode-alist

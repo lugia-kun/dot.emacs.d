@@ -1,3 +1,6 @@
+
+(el-get-bundle "mew")
+
 ;; Optional setup (Read Mail menu):
 (setq read-mail-command 'mew)
 

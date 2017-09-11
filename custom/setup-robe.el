@@ -1,4 +1,6 @@
 
+(el-get-bundle "robe")
+
 (eval-after-load 'company
   '(push 'company-robe company-backends))
 

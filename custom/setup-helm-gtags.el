@@ -2,8 +2,7 @@
 ;; you can change to any prefix key of your choice
 (setq helm-gtags-prefix-key "\C-cg")
 
-(use-package helm-gtags
-  :init
+(el-get-bundle helm-gtags
   (progn
     (setq helm-gtags-ignore-case t
           helm-gtags-auto-update t

@@ -1,5 +1,4 @@
-(use-package helm
-  :init
+(el-get-bundle helm
   (progn
     (require 'helm-config)
     (require 'helm-grep)
@@ -105,38 +104,38 @@
 
     (define-key global-map [remap list-buffers] 'helm-buffers-list)
 
-    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-    ;; PACKAGE: helm-swoop                ;;
-    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-    ;; Locate the helm-swoop folder to your path
-    (use-package helm-swoop
-      :bind (("C-c h o" . helm-swoop)
-             ("C-c s" . helm-multi-swoop-all))
-      :config
-      ;; When doing isearch, hand the word over to helm-swoop
-      (define-key isearch-mode-map (kbd "M-i") 'helm-swoop-from-isearch)
+    (helm-mode 1)))
 
-      ;; From helm-swoop to helm-multi-swoop-all
-      (define-key helm-swoop-map (kbd "M-i") 'helm-multi-swoop-all-from-helm-swoop)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; PACKAGE: helm-swoop                ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Locate the helm-swoop folder to your path
+(el-get-bundle helm-swoop
+  (require 'helm-swoop)
+  (global-set-key (kbd "C-c h o") 'helm-swoop)
+  (global-set-key (kbd "C-c s") 'helm-multi-swoop-all)
 
-      ;; Save buffer when helm-multi-swoop-edit complete
-      (setq helm-multi-swoop-edit-save t)
+  ;; When doing isearch, hand the word over to helm-swoop
+  (define-key isearch-mode-map (kbd "M-i") 'helm-swoop-from-isearch)
 
-      ;; If this value is t, split window inside the current window
-      (setq helm-swoop-split-with-multiple-windows t)
+  ;; From helm-swoop to helm-multi-swoop-all
+  (define-key helm-swoop-map (kbd "M-i") 'helm-multi-swoop-all-from-helm-swoop)
 
-      ;; Split direcion. 'split-window-vertically or 'split-window-horizontally
-      (setq helm-swoop-split-direction 'split-window-vertically)
+  ;; Save buffer when helm-multi-swoop-edit complete
+  (setq helm-multi-swoop-edit-save t)
 
-      ;; If nil, you can slightly boost invoke speed in exchange for text color
-      (setq helm-swoop-speed-or-color t))
+  ;; If this value is t, split window inside the current window
+  (setq helm-swoop-split-with-multiple-windows t)
 
-    (helm-mode 1)
+  ;; Split direcion. 'split-window-vertically or 'split-window-horizontally
+  (setq helm-swoop-split-direction 'split-window-vertically)
 
-    (use-package helm-projectile
-      :init
-      (helm-projectile-on)
-      (setq projectile-completion-system 'helm)
-      (setq projectile-indexing-method 'alien))))
+  ;; If nil, you can slightly boost invoke speed in exchange for text color
+  (setq helm-swoop-speed-or-color t))
+
+(el-get-bundle helm-projectile
+  (helm-projectile-on)
+  (setq projectile-completion-system 'helm)
+  (setq projectile-indexing-method 'alien))
 
 (provide 'setup-helm)

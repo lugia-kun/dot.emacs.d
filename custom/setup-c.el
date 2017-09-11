@@ -1,6 +1,5 @@
 ;; company-c-headers
-(use-package company-c-headers
-  :init
+(el-get-bundle "company-c-headers"
   (add-to-list 'company-backends 'company-c-headers))
 
 ;; hs-minor-mode for folding source code
@@ -19,8 +18,7 @@
 ;; “user”: When you want to define your own style
 (setq c-default-style) "linux" ;; set style to "linux"
 
-(use-package cc-mode
-  :init
+(el-get-bundle "cc-mode"
   (define-key c-mode-map  [(tab)] 'company-complete)
   (define-key c++-mode-map  [(tab)] 'company-complete))
 
