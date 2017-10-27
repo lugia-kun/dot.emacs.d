@@ -1,4 +1,6 @@
 
+(el-get-bundle 'irony)
+
 (require 'irony-cdb-json)
 
 (add-hook 'after-init-hook 'global-company-mode)

@@ -36,12 +36,13 @@
 (if (not (eql system-type "windows-nt"))
     (require 'setup-mew))
 (require 'setup-yatex)
-;; (require 'setup-irony)
+(require 'setup-irony)
 (require 'setup-robe)
 (require 'setup-markdown)
 (require 'setup-nyan)
 (require 'setup-fonts)
 (require 'setup-misc)
+(require 'setup-imaxima)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
