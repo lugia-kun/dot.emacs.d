@@ -19,5 +19,8 @@
 (setq c-default-style "linux") ;; set style to "linux"
 
 ;;(el-get-bundle "cc-mode")
+(require 'cc-mode)
+(define-key c-mode-map [(tab)] 'company-complete)
+(define-key c++-mode-map [(tab)] 'company-complete)
 
 (provide 'setup-c)

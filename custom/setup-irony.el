@@ -4,13 +4,13 @@
 (require 'irony-cdb-json)
 
 (add-hook 'after-init-hook 'global-company-mode)
-(add-hook 'company-mode-hook
-          '(lambda ()
-             (setq company-backends
-                   (delete 'company-semantic company-backends))
-             (setq company-backends
-                   (delete 'company-clang company-backends))
-             ))
+;;(add-hook 'company-mode-hook
+;;          '(lambda ()
+;;             (setq company-backends
+;;                   (delete 'company-semantic company-backends))
+;;             (setq company-backends
+;;                   (delete 'company-clang company-backends))
+;;             ))
 
 (eval-after-load 'company-backends 'company-irony)
 (projectile-global-mode)
