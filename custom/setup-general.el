@@ -15,12 +15,16 @@
 (setq-default indent-tabs-mode nil)
 
 (el-get-bundle "company"
-  (global-company-mode 1)
-  (delete 'company-semantic company-backends))
+  (progn
+    (require 'company)
+    (global-company-mode 1)
+    (delete 'company-semantic company-backends)))
 
 (el-get-bundle "projectile"
-  (projectile-global-mode)
-  (setq projectile-enable-caching t))
+  (progn
+    (require 'projectile)
+    (projectile-mode)
+    (setq projectile-enable-caching t)))
 
 (el-get-bundle "zygospore"
   (global-set-key (kbd "C-x 1") 'zygospore-toggle-delete-other-windows)

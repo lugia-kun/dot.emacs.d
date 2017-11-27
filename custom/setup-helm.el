@@ -1,5 +1,7 @@
 (el-get-bundle helm
   (progn
+    (message "hello, helm")
+    (require 'helm)
     (require 'helm-config)
     (require 'helm-grep)
     ;; To fix error at compile:
@@ -31,18 +33,17 @@
     (define-key helm-grep-mode-map (kbd "n")  'helm-grep-mode-jump-other-window-forward)
     (define-key helm-grep-mode-map (kbd "p")  'helm-grep-mode-jump-other-window-backward)
 
-    (when (executable-find "curl")
-      (setq helm-google-suggest-use-curl-p t))
+    ;;(when (executable-find "curl")
+    ;;  (setq helm-google-suggest-use-curl-p t))
 
-    (setq helm-google-suggest-use-curl-p t
-          helm-scroll-amount 4 ; scroll 4 lines other window using M-<next>/M-<prior>
+    (setq helm-scroll-amount 4  ; scroll 4 lines other window using M-<next>/M-<prior>
           ;; helm-quick-update t ; do not display invisible candidates
           helm-ff-search-library-in-sexp t ; search for library in `require' and `declare-function' sexp.
 
           ;; you can customize helm-do-grep to execute ack-grep
           ;; helm-grep-default-command "ack-grep -Hn --smart-case --no-group --no-color %e %p %f"
           ;; helm-grep-default-recurse-command "ack-grep -H --smart-case --no-group --no-color %e %p %f"
-          helm-split-window-in-side-p t ;; open helm buffer inside current window, not occupy whole other window
+          helm-split-window-inside-p t ;; open helm buffer inside current window, not occupy whole other window
 
           helm-echo-input-in-header-line t
 
@@ -55,13 +56,13 @@
 
           helm-buffers-fuzzy-matching t ; fuzzy matching buffer names when non-nil
                                         ; useful in helm-mini that lists buffers
-          helm-org-headings-fontify t
+          ;; helm-org-headings-fontify t
           ;; helm-find-files-sort-directories t
           ;; ido-use-virtual-buffers t
-          helm-semantic-fuzzy-match t
-          helm-M-x-fuzzy-match t
-          helm-imenu-fuzzy-match t
-          helm-lisp-fuzzy-completion t
+          ;; helm-semantic-fuzzy-match t
+          ;; helm-M-x-fuzzy-match t
+          ;; helm-imenu-fuzzy-match t
+          ;; helm-lisp-fuzzy-completion t
           ;; helm-apropos-fuzzy-match t
           helm-buffer-skip-remote-checking t
           helm-locate-fuzzy-match t
@@ -77,7 +78,6 @@
     (global-set-key (kbd "C-h SPC") 'helm-all-mark-rings)
     (global-set-key (kbd "C-c h o") 'helm-occur)
     (global-set-key (kbd "C-c h o") 'helm-occur)
-
     (global-set-key (kbd "C-c h w") 'helm-wikipedia-suggest)
     (global-set-key (kbd "C-c h g") 'helm-google-suggest)
 

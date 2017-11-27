@@ -51,7 +51,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (robe zygospore company clean-aindent-mode bind-key)))
+    (irony robe zygospore company clean-aindent-mode bind-key)))
  '(robe-completing-read-func (quote helm-robe-completing-read)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
