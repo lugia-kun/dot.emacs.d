@@ -1,5 +1,5 @@
 
-(el-get-bundle 'irony)
+(el-get-bundle 'irony-mode)
 
 (require 'irony-cdb-json)
 

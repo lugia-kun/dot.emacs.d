@@ -1,5 +1,5 @@
 
-;(package-initialize)
+;;; (package-initialize)
 
 (set-language-environment "UTF-8")
 
