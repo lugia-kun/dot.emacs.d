@@ -1,5 +1,5 @@
 
-(el-get-bundle "yatex" :hg "http://www.yatex.org/hgrepos/yatex")
+(el-get-bundle "yatex")
 
 (autoload 'yatex-mode "yatex" nil t)
 (setq auto-mode-alist

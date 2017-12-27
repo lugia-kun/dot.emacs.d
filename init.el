@@ -17,7 +17,8 @@
 (el-get-bundle "bind-key")
 
 (el-get-bundle "cmake-mode")
-(el-get-bundle "gnuplot-mode")
+(when (executable-find "autoreconf")
+  (el-get-bundle "gnuplot-mode"))
 
 (setq gc-cons-threshold 100000000)
 (setq inhibit-startup-message t)
@@ -33,9 +34,10 @@
 (require 'setup-cedet)
 (require 'setup-editing)
 
-(if (not (eql system-type "windows-nt"))
+(if (not (eql system-type 'windows-nt))
     (require 'setup-mew))
-(require 'setup-yatex)
+(when (executable-find "hg")
+  (require 'setup-yatex))
 (require 'setup-irony)
 (require 'setup-robe)
 (require 'setup-markdown)

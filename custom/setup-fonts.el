@@ -4,14 +4,14 @@
            (if (not (eql window-system 'ns))
                ;;               (set-default-font "Source Han Code JP 12"))
                nil
-             (set-default-font "Ubuntu Mono 16")
+             (set-default-font "Cica 16")
              (set-fontset-font (frame-parameter nil 'font)
                                'japanese-jisx0213.2004-1
-                               '("Source Han Code JP" . "unicode-bmp"))
+                               '("Cica" . "unicode-bmp"))
              (set-fontset-font (frame-parameter nil 'font)
                                'katakana-sjis
-                               '("Source Han Code JP" . "unicode-bmp")))
-         (set-default-font "Ubuntu Mono 12")
+                               '("Cica" . "unicode-bmp")))
+         (set-default-font "Cica 12")
          ;; (set-fontset-font (frame-parameter nil 'font)
          ;;                   'japanese-jisx0208
          ;;                   '("MeiryoKe_Console" . "unicode-bmp")
