@@ -16,10 +16,6 @@
 
 (el-get-bundle "bind-key")
 
-(el-get-bundle "cmake-mode")
-(when (executable-find "autoreconf")
-  (el-get-bundle "gnuplot-mode"))
-
 (setq gc-cons-threshold 100000000)
 (setq inhibit-startup-message t)
 
@@ -45,6 +41,10 @@
 (require 'setup-fonts)
 (require 'setup-misc)
 (require 'setup-imaxima)
+
+(el-get-bundle "cmake-mode")
+(when (executable-find "autoreconf")
+  (el-get-bundle "gnuplot-mode"))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

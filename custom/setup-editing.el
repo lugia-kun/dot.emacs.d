@@ -45,18 +45,24 @@
 ;; Package: undo-tree
 ;; GROUP: Editing -> Undo -> Undo Tree
 (el-get-bundle "undo-tree"
-  (global-undo-tree-mode 1))
+  (progn
+    (require 'undo-tree)
+    (global-undo-tree-mode 1)))
 
 
 ;; Package: yasnippet
 ;; GROUP: Editing -> Yasnippet
 ;; Package: yasnippet
 (el-get-bundle yasnippet
-  (add-hook 'prog-mode-hook 'yas-minor-mode))
+  (progn
+    (require 'yasnippet)
+    (add-hook 'prog-mode-hook 'yas-minor-mode)))
 
 ;; Package: clean-aindent-mode
-(el-get-bundle clean-aindent-mode
-  (add-hook 'prog-mode-hook 'clean-aindent-mode))
+(el-get-bundle clean-aindent
+  (progn
+    (require 'clean-aindent-mode)
+    (add-hook 'prog-mode-hook 'clean-aindent-mode)))
 
 ;; Package: dtrt-indent
 (el-get-bundle dtrt-indent
@@ -65,9 +71,11 @@
 
 ;; Package: ws-butler
 (el-get-bundle ws-butler
-  (add-hook 'prog-mode-hook 'ws-butler-mode)
-  (add-hook 'text-mode 'ws-butler-mode)
-  (add-hook 'fundamental-mode 'ws-butler-mode))
+  (progn
+    (require 'ws-butler)
+    (add-hook 'prog-mode-hook 'ws-butler-mode)
+    (add-hook 'text-mode 'ws-butler-mode)
+    (add-hook 'fundamental-mode 'ws-butler-mode)))
 
 ;; PACKAGE: comment-dwim-2
 (global-set-key (kbd "M-;") 'comment-dwim-2)
@@ -75,9 +83,11 @@
 ;; PACKAGE: anzu
 ;; GROUP: Editing -> Matching -> Isearch -> Anzu
 (el-get-bundle anzu
-  (global-anzu-mode)
-  (global-set-key (kbd "M-%") 'anzu-query-replace)
-  (global-set-key (kbd "C-M-%") 'anzu-query-replace-regexp))
+  (progn
+    (require 'anzu)
+    (global-anzu-mode)
+    (global-set-key (kbd "M-%") 'anzu-query-replace)
+    (global-set-key (kbd "C-M-%") 'anzu-query-replace-regexp)))
 
 ;; PACKAGE: iedit
 (el-get-bundle iedit

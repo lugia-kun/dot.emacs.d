@@ -27,8 +27,10 @@
     (setq projectile-enable-caching t)))
 
 (el-get-bundle "zygospore"
-  (global-set-key (kbd "C-x 1") 'zygospore-toggle-delete-other-windows)
-  (global-set-key (kbd "RET")   'newline-and-indent))
+  (progn
+    (require 'zygospore)
+    (global-set-key (kbd "C-x 1") 'zygospore-toggle-delete-other-windows)
+    (global-set-key (kbd "RET")   'newline-and-indent)))
                                         ; automatically indent when press RET
 
 ;; set appearance of a tab that is represented by 4 spaces
