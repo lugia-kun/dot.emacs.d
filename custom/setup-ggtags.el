@@ -1,3 +1,6 @@
+
+(el-get-bundle 'ggtags)
+
 (require 'ggtags)
 
 (ggtags-mode 1)
