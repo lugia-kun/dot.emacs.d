@@ -78,9 +78,10 @@
     (add-hook 'fundamental-mode 'ws-butler-mode)))
 
 ;; PACKAGE: comment-dwim-2
-(use-package comment-dwim-2
-  :bind (("M-;" . comment-dwim-2))
-  )
+(el-get-bundle comment-dwim-2
+  (progn
+    (require 'comment-dwim-2)
+    (bind-key "M-;" 'comment-dwim-2)))
 
 ;; PACKAGE: anzu
 ;; GROUP: Editing -> Matching -> Isearch -> Anzu
