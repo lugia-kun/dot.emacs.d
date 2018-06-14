@@ -81,7 +81,7 @@
 (el-get-bundle comment-dwim-2
   (progn
     (require 'comment-dwim-2)
-    (bind-key "M-;" 'comment-dwim-2)))
+    (global-set-key "\M-;" 'comment-dwim-2)))
 
 ;; PACKAGE: anzu
 ;; GROUP: Editing -> Matching -> Isearch -> Anzu
