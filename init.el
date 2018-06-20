@@ -41,6 +41,7 @@
 (require 'setup-fonts)
 (require 'setup-misc)
 (require 'setup-imaxima)
+(require 'setup-mozc)
 
 (el-get-bundle "cmake-mode")
 (when (executable-find "autoreconf")
