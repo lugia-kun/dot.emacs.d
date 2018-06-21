@@ -1,9 +1,3 @@
-;; company-c-headers
-(el-get-bundle "company-c-headers"
-  (add-to-list 'company-backends 'company-c-headers))
-
-;; hs-minor-mode for folding source code
-(add-hook 'c-mode-common-hook 'hs-minor-mode)
 
 ;; Available C style:
 ;; “gnu”: The default style for GNU projects
@@ -22,5 +16,17 @@
 (require 'cc-mode)
 (define-key c-mode-map [(tab)] 'company-complete)
 (define-key c++-mode-map [(tab)] 'company-complete)
+
+(el-get-bundle "doxymacs")
+
+(require 'doxymacs)
+(add-hook 'c-mode-common-hook 'doxymacs-mode)
+
+;; company-c-headers
+(el-get-bundle "company-c-headers"
+  (add-to-list 'company-backends 'company-c-headers))
+
+;; hs-minor-mode for folding source code
+(add-hook 'c-mode-common-hook 'hs-minor-mode)
 
 (provide 'setup-c)
