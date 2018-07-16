@@ -54,7 +54,5 @@
 (global-set-key (kbd "C-c +") 'increment-number-decimal)
 (global-set-key (kbd "C-c -") 'decrement-number-decimal)
 
-(setq-default c-basic-offset 4)
-
 (provide 'setup-misc)
 

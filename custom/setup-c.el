@@ -1,4 +1,9 @@
 
+;;(el-get-bundle "cc-mode")
+(require 'cc-mode)
+(define-key c-mode-map [(tab)] 'company-complete)
+(define-key c++-mode-map [(tab)] 'company-complete)
+
 ;; Available C style:
 ;; “gnu”: The default style for GNU projects
 ;; “k&r”: What Kernighan and Ritchie, the authors of C used in their book
@@ -11,16 +16,7 @@
 ;; “java”: The default style for java-mode (see below)
 ;; “user”: When you want to define your own style
 (setq c-default-style "linux") ;; set style to "linux"
-
-;;(el-get-bundle "cc-mode")
-(require 'cc-mode)
-(define-key c-mode-map [(tab)] 'company-complete)
-(define-key c++-mode-map [(tab)] 'company-complete)
-
-(el-get-bundle "doxymacs")
-
-(require 'doxymacs)
-(add-hook 'c-mode-common-hook 'doxymacs-mode)
+(setq c-basic-offset 2)
 
 ;; company-c-headers
 (el-get-bundle "company-c-headers"

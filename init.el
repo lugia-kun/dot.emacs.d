@@ -21,11 +21,18 @@
 
 (add-to-list 'load-path "~/.emacs.d/custom")
 
+
+(when (memq window-system '(mac ns x))
+  (progn
+    (el-get-bundle "exec-path-from-shell")
+    (exec-path-from-shell-initialize)
+    ))
+
 (require 'setup-general)
 (if (version< emacs-version "24.4")
     (require 'setup-ivy-counsel)
-  (require 'setup-helm)
-  (require 'setup-helm-gtags))
+  (progn (require 'setup-helm)
+         (require 'setup-helm-gtags)))
 (require 'setup-ggtags)
 (require 'setup-c)
 (require 'setup-cedet)
