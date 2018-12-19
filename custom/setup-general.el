@@ -1,5 +1,8 @@
-(menu-bar-mode -1)
-(tool-bar-mode -1)
+
+(if (fboundp 'menu-bar-mode)
+    (menu-bar-mode -1))
+(if (fboundp 'tool-bar-mode)
+    (tool-bar-mode -1))
 
 (setq gc-cons-threshold 100000000)
 (setq inhibit-startup-message t)
@@ -32,6 +35,10 @@
     (global-set-key (kbd "C-x 1") 'zygospore-toggle-delete-other-windows)
     (global-set-key (kbd "RET")   'newline-and-indent)))
                                         ; automatically indent when press RET
+
+(el-get-bundle "ace-window")
+
+(global-set-key (kbd "C-x o") 'ace-window)
 
 ;; set appearance of a tab that is represented by 4 spaces
 (setq-default tab-width 4)
