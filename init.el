@@ -66,7 +66,14 @@
  '(package-selected-packages
    (quote
     (irony robe zygospore company clean-aindent-mode bind-key)))
- '(robe-completing-read-func (quote helm-robe-completing-read)))
+ '(robe-completing-read-func (quote helm-robe-completing-read))
+ '(safe-local-variable-values
+   (quote
+    ((eval set
+           (make-local-variable
+            (quote my-project-path))
+           (expand-file-name
+            (locate-dominating-file default-directory ".dir-locals.el")))))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
