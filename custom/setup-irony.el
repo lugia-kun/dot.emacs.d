@@ -1,35 +1,34 @@
 
-(el-get-bundle 'irony-mode)
+(el-get-bundle 'irony-mode
+  (progn
+    (require 'irony-cdb-json)
+    (add-hook 'after-init-hook 'global-company-mode)
+    (add-hook 'company-mode-hook
+              '(lambda ()
+                 (setq company-backends
+                       (delete 'company-semantic company-backends))
+                 (setq compnay-backends
+                       (delete 'company-clang company-backends))))
+    (add-hook 'c-mode-hook 'irony-mode)
+    (add-hook 'c++-mode-hook 'irony-mode)
+    (add-hook 'objc-mode-hook 'irony-mode)
+    ))
 
-(require 'irony-cdb-json)
+(el-get-bundle 'company-irony
+  (progn
+    (add-hook 'company-mode-hook
+              '(lambda ()
+                 (add-to-list company-backends 'company-irony)))
+    (setq irony-lang-compile-option-alist
+          (quote ((c-mode . "c")
+                  (c++-mode . "c++ -lstdc++")
+                  (objc-mode . "objective-c"))))
+    (defun ad-irony--lang-compile-option ()
+      (defvar irony-lang-compile-option-alist)
+      (let ((it (cdr-safe (assq major-mode irony-lang-compile-option-alist))))
+        (when it (append '("-x") (split-string it "\s")))))
+    (advice-add 'irony--lang-compile-option :override #'ad-irony--lang-compile-option)))
 
-(add-hook 'after-init-hook 'global-company-mode)
-;;(add-hook 'company-mode-hook
-;;          '(lambda ()
-;;             (setq company-backends
-;;                   (delete 'company-semantic company-backends))
-;;             (setq company-backends
-;;                   (delete 'company-clang company-backends))
-;;             ))
-
-(eval-after-load 'company-backends 'company-irony)
 (projectile-global-mode)
-
-(add-hook 'c++-mode-hook 'irony-mode)
-(add-hook 'c-mode-hook 'irony-mode)
-(add-hook 'objc-mode-hook 'irony-mode)
-
-;; Add "../build" (relative to the projectile root directory) of Cxx projects
-;; as the path where to find "compile_commands.json", then load irony's options.
-(defun my-load-irony-options()
-  (irony-cdb-json-add-compile-commands-path
-   (projectile-project-root)
-   (concat (file-name-as-directory "build")
-       "compile_commands.json"))
-  (irony-cdb-autosetup-compile-options))
-
-(add-hook 'c-mode-hook 'my-load-irony-options)
-(add-hook 'c++-mode-hook 'my-load-irony-options)
-(add-hook 'objc-mode-hook 'my-load-irony-options)
 
 (provide 'setup-irony)
