@@ -44,11 +44,10 @@
 
 ;; Package: undo-tree
 ;; GROUP: Editing -> Undo -> Undo Tree
-(el-get-bundle "undo-tree"
-  (progn
-    (require 'undo-tree)
-    (global-undo-tree-mode 1)))
-
+;(el-get-bundle "undo-tree"
+;  (progn
+;    (require 'undo-tree)
+;    (global-undo-tree-mode 1)))
 
 ;; Package: yasnippet
 ;; GROUP: Editing -> Yasnippet
