@@ -18,9 +18,9 @@
   (progn
     (add-to-list 'company-backends 'company-irony)
     (setq irony-lang-compile-option-alist
-          '((c-mode . "-x c")
-            (c++-mode . "-x c++ -lstdc++")
-            (objc-mode . "-x objective-c")))
+          '((c-mode . "c")
+            (c++-mode . "c++")
+            (objc-mode . "objective-c")))
     ; (defun ad-irony--lang-compile-option ()
     ;   (defvar irony-lang-compile-option-alist)
     ;   (let ((it (cdr-safe (assq major-mode irony-lang-compile-option-alist))))
