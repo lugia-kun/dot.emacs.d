@@ -1,7 +1,7 @@
 
 (defun my-set-font () "Set font"
        (cond ((eql window-system 'w32)
-              (set-default-font "Ocami 12"))
+              (set-face-font 'default "Ocami 12"))
              ((eql window-system 'ns)
               (progn
                 (set-default-font "Ocami 16")
