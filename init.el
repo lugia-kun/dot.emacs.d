@@ -42,11 +42,11 @@
     (require 'setup-mew))
 (when (executable-find "hg")
   (require 'setup-yatex))
-(require 'setup-irony)
+(require 'setup-lsp)
 (require 'setup-robe)
 (require 'setup-markdown)
 (require 'setup-nyan)
-(require 'setup-fonts)
+;(require 'setup-fonts)
 (require 'setup-misc)
 (require 'setup-imaxima)
 (require 'setup-mozc)
@@ -65,7 +65,7 @@
  '(delete-selection-mode nil)
  '(package-selected-packages
    (quote
-    (irony robe zygospore company clean-aindent-mode bind-key)))
+    (undo-tree irony robe zygospore company clean-aindent-mode bind-key)))
  '(robe-completing-read-func (quote helm-robe-completing-read))
  '(safe-local-variable-values
    (quote

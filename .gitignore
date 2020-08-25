@@ -11,3 +11,4 @@
 /el-get
 /eshell
 /projectile.cache
+/.lsp-session*
