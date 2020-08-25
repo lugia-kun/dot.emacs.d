@@ -46,7 +46,7 @@
 (require 'setup-robe)
 (require 'setup-markdown)
 (require 'setup-nyan)
-;(require 'setup-fonts)
+(require 'setup-fonts)
 (require 'setup-misc)
 (require 'setup-imaxima)
 (require 'setup-mozc)
