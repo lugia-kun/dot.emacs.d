@@ -4,7 +4,7 @@
               (set-face-font 'default "Ocami 12"))
              ((eql window-system 'ns)
               (progn
-                (set-default-font "Ocami 16")
+                (set-face-font 'default "Ocami 16")
                 (set-fontset-font (frame-parameter nil 'font)
                                   '(#xe000 . #xf8ff) "Ocami")
                 (set-fontset-font (frame-parameter nil 'font)
