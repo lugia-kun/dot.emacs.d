@@ -18,5 +18,6 @@
     ))
 
 (projectile-global-mode)
+(load-library "flycheck")
 
 (provide 'setup-lsp)
