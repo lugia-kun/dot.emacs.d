@@ -29,12 +29,13 @@
     (projectile-mode)
     (setq projectile-enable-caching t)))
 
+(global-set-key (kbd "RET") 'newline-and-indent)
+                                        ; automatically indent when press RET
+
 (el-get-bundle "zygospore"
   (progn
     (require 'zygospore)
-    (global-set-key (kbd "C-x 1") 'zygospore-toggle-delete-other-windows)
-    (global-set-key (kbd "RET")   'newline-and-indent)))
-                                        ; automatically indent when press RET
+    (global-set-key (kbd "C-x 1") 'zygospore-toggle-delete-other-windows)))
 
 (el-get-bundle "ace-window")
 
@@ -69,5 +70,8 @@
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+
+(setq inverse-video t)
+(delete-selection-mode t)
 
 (provide 'setup-general)

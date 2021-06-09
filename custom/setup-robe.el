@@ -11,7 +11,6 @@
 (eval-after-load 'company
   '(push 'company-robe company-backends))
 
-(custom-set-variables
- '(robe-completing-read-func 'helm-robe-completing-read))
+(setq robe-completing-read-func 'helm-robe-completing-read)
 
 (provide 'setup-robe)
