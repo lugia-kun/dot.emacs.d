@@ -1,6 +1,8 @@
 
+(require 'cl)
+
 (defun my-set-font () "Set font"
-       (case window-system
+       (cl-case window-system
          ('w32 (set-face-font 'default "Ocami 12")
                (with-eval-after-load "markdown-mode"
                  (set-face-font 'markdown-code-face "Ocami 12")))
