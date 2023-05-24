@@ -1,5 +1,7 @@
 
 (el-get-bundle hydra
+  (require 'hydra)
+
   (defhydra hydra-yank-pop ()
     "yank"
     ("C-y" yank nil)

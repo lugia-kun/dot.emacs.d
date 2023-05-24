@@ -29,17 +29,13 @@
     ))
 
 (require 'setup-general)
-(if (version< emacs-version "24.4")
-    (require 'setup-ivy-counsel)
-  (progn (require 'setup-helm)
-         (require 'setup-helm-gtags)))
+(require 'setup-helm)
+(require 'setup-helm-gtags)
 (require 'setup-ggtags)
 (require 'setup-c)
 (require 'setup-cedet)
 (require 'setup-editing)
-
-(if (not (eql system-type 'windows-nt))
-    (require 'setup-mew))
+(require 'setup-wl)
 (when (executable-find "hg")
   (require 'setup-yatex))
 (require 'setup-lsp)
@@ -56,4 +52,3 @@
   (el-get-bundle "gnuplot-mode"))
 
 (require 'setup-hydra)
-
