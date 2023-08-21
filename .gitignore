@@ -12,3 +12,5 @@
 /eshell
 /projectile.cache
 /.lsp-session*
+/eln-cache
+/tramp
