@@ -36,9 +36,10 @@
      ("l" recenter-top-bottom)
      ("q" nil)))
 
-  (defhydra hydra-goto-line (goto-map ""
-                                      :pre (linum-mode 1)
-                                      :post (linum-mode -1))
+  (defhydra hydra-goto-line
+    (goto-map ""
+              :pre (display-line-numbers-mode 1)
+              :post (display-line-numbers-mode -1))
     "goto-line"
     ("g" goto-line "go")
     ("m" set-mark-command "mark" :bind nil)
