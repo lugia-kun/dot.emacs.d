@@ -64,12 +64,20 @@
 (windmove-default-keybindings)
 
 (el-get-bundle "multiple-cursors")
+(el-get-bundle "phi-search")
+(el-get-bundle "phi-search-mc")
 
 (require 'multiple-cursors)
+(require 'phi-search)
+(require 'phi-search-mc)
+
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+
+(phi-search-mc/setup-keys)
+(add-hook 'isearch-mode-hook 'phi-search-from-isearch-mc/setup-keys)
 
 (setq inverse-video t)
 (delete-selection-mode t)
