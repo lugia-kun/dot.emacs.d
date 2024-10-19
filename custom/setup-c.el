@@ -1,8 +1,8 @@
 
 ;;(el-get-bundle "cc-mode")
 (require 'cc-mode)
-(define-key c-mode-map [(tab)] 'company-complete)
-(define-key c++-mode-map [(tab)] 'company-complete)
+;(define-key c-mode-map [(tab)] 'company-complete)
+;(define-key c++-mode-map [(tab)] 'company-complete)
 
 ;; Available C style:
 ;; “gnu”: The default style for GNU projects
