@@ -1,21 +1,19 @@
 
-(el-get-bundle 's)
-(el-get-bundle 'f)
-
-(el-get-bundle 'flycheck)
-(el-get-bundle 'lsp-mode
-  (progn
-    (add-hook 'after-init-hook 'global-company-mode)
-    (setq company-backends
-          (delete 'company-semantic company-backends))
-    (setq company-backends
-          (delete 'company-clang company-backends))
-    (setq company-backends
-          (delete 'company-lsp company-backends))
-    (add-hook 'c-mode-hook 'lsp 'lsp-completion-mode)
-    (add-hook 'c++-mode-hook 'lsp 'lsp-completion-mode)
-    (add-hook 'objc-mode-hook 'lsp 'lsp-completion-mode)
-    ))
+(use-package s)
+(use-package f)
+(use-package flycheck)
+(use-package lsp-mode
+  :hook ((after-init . global-company-mode)
+         (c-mode . (lsp lsp-completion-mode))
+         (c++-mode . (lsp lsp-completion-mode))
+         (objc-mode . (lsp lsp-completion-mode)))
+  :init
+  (setq company-backends
+        (delete 'company-semantic company-backends))
+  (setq company-backends
+        (delete 'company-clang company-backends))
+  (setq company-backends
+        (delete 'company-lsp company-backends)))
 
 (projectile-global-mode)
 (load-library "flycheck")

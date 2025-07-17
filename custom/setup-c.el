@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 
 ;;(el-get-bundle "cc-mode")
 (require 'cc-mode)
@@ -19,7 +20,8 @@
 (setq c-basic-offset 2)
 
 ;; company-c-headers
-(el-get-bundle "company-c-headers"
+(use-package company-c-headers
+  :init
   (add-to-list 'company-backends 'company-c-headers))
 
 ;; hs-minor-mode for folding source code

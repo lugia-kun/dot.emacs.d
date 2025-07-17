@@ -1,7 +1,7 @@
+;;; -*- lexical-binding: t; -*-
 
-(el-get-bundle hydra
-  (require 'hydra)
-
+(use-package hydra
+  :init
   (defhydra hydra-yank-pop ()
     "yank"
     ("C-y" yank nil)
@@ -35,15 +35,6 @@
      ("V" scroll-down-command)
      ("l" recenter-top-bottom)
      ("q" nil)))
-
-  (defhydra hydra-goto-line
-    (goto-map ""
-              :pre (display-line-numbers-mode 1)
-              :post (display-line-numbers-mode -1))
-    "goto-line"
-    ("g" goto-line "go")
-    ("m" set-mark-command "mark" :bind nil)
-    ("q" nil "quit"))
 
   (defhydra hydra-increment-number ()
     "inc/dec"

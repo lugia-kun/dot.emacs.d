@@ -1,6 +1,6 @@
 
-(el-get-bundle "nyan-mode")
-
-(setq nyan-mode t)
+(use-package nyan-mode
+  :init
+  (setq nyan-mode t))
 
 (provide 'setup-nyan)

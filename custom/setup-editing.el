@@ -39,60 +39,28 @@
 
 ;; Package: volatile-highlights
 ;; GROUP: Editing -> Volatile Highlights
-(el-get-bundle "volatile-highlights"
+(use-package volatile-highlights
+  :init
   (volatile-highlights-mode t))
-
-;; Package: undo-tree
-;; GROUP: Editing -> Undo -> Undo Tree
-;(el-get-bundle "undo-tree"
-;  (progn
-;    (require 'undo-tree)
-;    (global-undo-tree-mode 1)))
 
 ;; Package: yasnippet
 ;; GROUP: Editing -> Yasnippet
 ;; Package: yasnippet
-(el-get-bundle yasnippet
-  (progn
-    (require 'yasnippet)
-    (add-hook 'prog-mode-hook 'yas-minor-mode)))
-
-;; Package: clean-aindent-mode
-(el-get-bundle clean-aindent
-  (progn
-    (require 'clean-aindent-mode)
-    (add-hook 'prog-mode-hook 'clean-aindent-mode)))
+(use-package yasnippet
+  :hook ((prog-mode . yas-minor-mode)))
 
 ;; Package: dtrt-indent
-(el-get-bundle dtrt-indent
-  (dtrt-indent-mode 1)
+(use-package dtrt-indent
+  :init
   (setq dtrt-indent-verbosity 0))
 
 ;; Package: ws-butler
-(el-get-bundle ws-butler
-  (progn
-    (require 'ws-butler)
-    (add-hook 'prog-mode-hook 'ws-butler-mode)
-    (add-hook 'text-mode 'ws-butler-mode)
-    (add-hook 'fundamental-mode 'ws-butler-mode)))
-
-;; PACKAGE: comment-dwim-2
-(el-get-bundle comment-dwim-2
-  (progn
-    (require 'comment-dwim-2)
-    (global-set-key "\M-;" 'comment-dwim-2)))
-
-;; PACKAGE: anzu
-;; GROUP: Editing -> Matching -> Isearch -> Anzu
-(el-get-bundle anzu
-  (progn
-    (require 'anzu)
-    (global-anzu-mode)
-    (global-set-key (kbd "M-%") 'anzu-query-replace)
-    (global-set-key (kbd "C-M-%") 'anzu-query-replace-regexp)))
+(use-package ws-butler
+  :hook ((prog-mode text-mode fundamental-mode) . ws-butler-mode))
 
 ;; PACKAGE: iedit
-(el-get-bundle iedit
+(use-package iedit
+  :init
   (setq iedit-toggle-key-default nil))
 
 ;; Customized functions

@@ -1,4 +1,4 @@
-(el-get-bundle 'wanderlust)
+(use-package wanderlust)
 
 ;;; Account information should be stored in ~/.wl
 

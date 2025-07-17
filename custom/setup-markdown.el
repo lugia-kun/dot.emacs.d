@@ -1,10 +1,5 @@
 
-(el-get-bundle "markdown-mode")
-
-(autoload 'markdown-mode "markdown-mode" nil t)
-
-(setq auto-mode-alist
-      (append '(("\\.md$" . markdown-mode))
-              auto-mode-alist))
+(use-package markdown-mode
+  :mode "\\.md$")
 
 (provide 'setup-markdown)

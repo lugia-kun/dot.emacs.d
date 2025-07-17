@@ -17,29 +17,24 @@
 ;; use space to indent by default
 (setq-default indent-tabs-mode nil)
 
-(el-get-bundle "company"
-  (progn
-    (require 'company)
-    (global-company-mode 1)
-    (delete 'company-semantic company-backends)))
+(use-package company
+  :config
+  (global-company-mode 1)
+  (delete 'company-semantic company-backends))
 
-(el-get-bundle "projectile"
-  (progn
-    (require 'projectile)
-    (projectile-mode)
-    (setq projectile-enable-caching t)))
+(use-package projectile
+  :config
+  (projectile-mode)
+  (setq projectile-enable-caching t))
 
 (global-set-key (kbd "RET") 'newline-and-indent)
                                         ; automatically indent when press RET
 
-(el-get-bundle "zygospore"
-  (progn
-    (require 'zygospore)
-    (global-set-key (kbd "C-x 1") 'zygospore-toggle-delete-other-windows)))
+(use-package zygospore
+  :bind (("C-x 1" . zygospore-toggle-delete-other-windows)))
 
-(el-get-bundle "ace-window")
-
-(global-set-key (kbd "C-x o") 'ace-window)
+(use-package ace-window
+  :bind (("C-x o" . ace-window)))
 
 ;; set appearance of a tab that is represented by 4 spaces
 (setq-default tab-width 4)
@@ -63,21 +58,18 @@
 (global-set-key (kbd "C-c w") 'whitespace-mode)
 (windmove-default-keybindings)
 
-(el-get-bundle "multiple-cursors")
-(el-get-bundle "phi-search")
-(el-get-bundle "phi-search-mc")
+(use-package multiple-cursors
+  :bind (("C-S-c C-S-c" . mc/edit-lines)
+         ("C->" . mc/mark-next-like-this)
+         ("C-<" . mc/mark-previous-like-this)
+         ("C-c C-<" . mc/mark-all-like-this)))
 
-(require 'multiple-cursors)
-(require 'phi-search)
-(require 'phi-search-mc)
+(use-package phi-search)
 
-(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
-(global-set-key (kbd "C->") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
-
-(phi-search-mc/setup-keys)
-(add-hook 'isearch-mode-hook 'phi-search-from-isearch-mc/setup-keys)
+(use-package phi-search-mc
+  :config
+  (phi-search-mc/setup-keys)
+  :hook (isearch-mode . phi-search-from-isearch-mc/setup-keys))
 
 (setq inverse-video t)
 (delete-selection-mode t)
