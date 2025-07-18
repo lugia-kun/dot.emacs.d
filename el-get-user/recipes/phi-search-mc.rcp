@@ -1,5 +1,0 @@
-(:name phi-search-mc
-       :description "multiple-cursors extension for phi-search"
-       :type github
-       :depends (multiple-cursors phi-search)
-       :pkgname "knu/phi-search-mc.el")
