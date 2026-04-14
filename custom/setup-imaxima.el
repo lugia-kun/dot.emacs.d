@@ -1,3 +1,4 @@
+(add-to-list 'load-path "/opt/homebrew/share/emacs/site-lisp/maxima")
 
 (autoload 'maxima "maxima" "Maxima CAS mode" t nil)
 

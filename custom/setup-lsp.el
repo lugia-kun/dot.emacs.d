@@ -6,7 +6,9 @@
   :hook ((after-init . global-company-mode)
          (c-mode . (lsp lsp-completion-mode))
          (c++-mode . (lsp lsp-completion-mode))
-         (objc-mode . (lsp lsp-completion-mode)))
+         (objc-mode . (lsp lsp-completion-mode))
+         (typescript-mode . (lsp lsp-completion-mode))
+         (ruby-mode . (lsp lsp-completion-mode)))
   :init
   (setq company-backends
         (delete 'company-semantic company-backends))
