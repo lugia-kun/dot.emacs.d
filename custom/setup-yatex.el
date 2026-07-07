@@ -1,11 +1,11 @@
 
 (use-package yatex
-  :mode (("\\.tex$" . yatex-mode)
-         ("\\.ltx$" . yatex-mode)
-         ("\\.cls$" . yatex-mode)
-         ("\\.sty$" . yatex-mode)
-         ("\\.clo$" . yatex-mode)
-         ("\\.bbl$" . yatex-mode))
+  ;:mode (("\\.tex$" . yatex-mode)
+  ;       ("\\.ltx$" . yatex-mode)
+  ;       ("\\.cls$" . yatex-mode)
+  ;       ("\\.sty$" . yatex-mode)
+  ;       ("\\.clo$" . yatex-mode)
+  ;       ("\\.bbl$" . yatex-mode))
   :init
   (setq YaTeX-inhibit-prefix-letter t)
   (setq YaTeX-kanji-code nil)

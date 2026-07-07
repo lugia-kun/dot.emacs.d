@@ -37,6 +37,8 @@
                                           newline-mark))
                             (whitespace-mode 1)))
 
+(add-hook 'prog-mode-hook (indent-tabs-mode nil))
+
 ;; Package: volatile-highlights
 ;; GROUP: Editing -> Volatile Highlights
 (use-package volatile-highlights
@@ -51,17 +53,14 @@
 
 ;; Package: dtrt-indent
 (use-package dtrt-indent
-  :init
-  (setq dtrt-indent-verbosity 0))
+  :hook ((prog-mode text-mode fundamental-mode) . dtrt-indent-mode))
 
 ;; Package: ws-butler
 (use-package ws-butler
   :hook ((prog-mode text-mode fundamental-mode) . ws-butler-mode))
 
 ;; PACKAGE: iedit
-(use-package iedit
-  :init
-  (setq iedit-toggle-key-default nil))
+(use-package iedit)
 
 ;; Customized functions
 (defun prelude-move-beginning-of-line (arg)

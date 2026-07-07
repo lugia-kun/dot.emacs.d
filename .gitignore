@@ -15,3 +15,8 @@
 /.lsp-session*
 /eln-cache
 /tramp
+/custom.el
+/.mc-lists.el
+/projectile-frecency.eld
+/projects
+/transient

@@ -1,4 +1,5 @@
 (setq byte-compile-error-on-warn t)
+(setq custom-file "~/.emacs.d/custom.el")
 
 (require 'package)
 
@@ -40,27 +41,12 @@
 (require 'setup-misc)
 (require 'setup-imaxima)
 (require 'setup-mozc)
+(require 'setup-lammps)
 
 (use-package cmake-mode)
 (use-package gnuplot-mode)
 
 (require 'setup-hydra)
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   '("f82e136e2a0f01479a0b1a5a874ab33fd8f808fa59a86568215a278d43195425"
-     default))
- '(delete-selection-mode nil)
- '(lsp-clients-clangd-args '("--header-insertion-decorators=0" "--clang-tidy"))
- '(native-comp-async-jobs-number 0)
- '(package-selected-packages nil))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+(if (file-exists-p custom-file)
+    (load custom-file))
